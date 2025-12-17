@@ -1,0 +1,460 @@
+/* Root variables for consistent theming */
+:root {
+  --primary-color: #495E57;
+  --secondary-color: #F4CE14;
+  --text-color: #333333;
+  --error-color: #EE4B2B;
+  --success-color: #2ECC71;
+  --border-color: #EDEFEE;
+  --bg-color: #FFFFFF;
+  --gray-bg: #F8F9FA;
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Karla', Arial, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styles */
+.header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Markazi Text', serif;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Navigation */
+.nav {
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s, background-color 0.3s;
+  border-radius: 4px;
+}
+
+.nav a:hover,
+.nav a:focus {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: var(--gray-bg);
+  border-radius: 8px;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-family: 'Markazi Text', serif;
+}
+
+/* Booking form */
+.booking-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--bg-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.booking-form h2 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'Markazi Text', serif;
+  font-size: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.form-group label span {
+  color: var(--error-color);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+/* Ensure date picker calendar icon is fully clickable */
+input[type="date"] {
+  cursor: pointer;
+  width: 100%;
+  padding-right: 2.5rem;
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  padding: 0.25rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23495E57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right center;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  background-color: rgba(73, 94, 87, 0.1);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(73, 94, 87, 0.1);
+}
+
+.form-group input:disabled,
+.form-group select:disabled {
+  background-color: var(--gray-bg);
+  cursor: not-allowed;
+}
+
+/* Error and help text */
+.error {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.help-text {
+  color: #666;
+  font-size: 0.875rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.info {
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.submit-error {
+  padding: 1rem;
+  background-color: #FEE;
+  border-left: 4px solid var(--error-color);
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+/* Submit button */
+.submit-button,
+.button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.submit-button:hover:not(:disabled),
+.button:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.submit-button:focus,
+.button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Confirmation page */
+.confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.confirmation-card {
+  background-color: var(--bg-color);
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--success-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 0 auto 1.5rem;
+}
+
+.confirmation-card h2 {
+  color: var(--success-color);
+  margin-bottom: 2rem;
+  font-family: 'Markazi Text', serif;
+  font-size: 2.5rem;
+}
+
+.booking-details {
+  text-align: left;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--gray-bg);
+  border-radius: 8px;
+}
+
+.booking-details h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.booking-details dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem 1.5rem;
+}
+
+.booking-details dt {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.booking-details dd {
+  color: var(--text-color);
+}
+
+.confirmation-message {
+  color: #666;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 1rem;
+  font-family: 'Markazi Text', serif;
+}
+
+.footer-section p {
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+}
+
+.footer-section address {
+  font-style: normal;
+}
+
+.footer-section a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.footer-section a:hover,
+.footer-section a:focus {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .booking-form {
+    padding: 1.5rem;
+  }
+
+  .confirmation-card {
+    padding: 2rem;
+  }
+
+  .booking-details dl {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .booking-details dt {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .booking-form {
+    padding: 1rem;
+  }
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .nav,
+  .submit-button {
+    display: none;
+  }
+
+  .confirmation-card {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}
